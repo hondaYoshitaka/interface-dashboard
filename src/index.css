@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+}
+
+header {
+    margin-bottom: 1.5rem;
+}
+
+#contents {
+    padding: 0 1rem;
+}
+
+.range-date-picker > div {
+    display: inline;
+}
+
+.range-date-picker > div:nth-child(1)::after {
+    content: '〜';
+    margin: 0 .5rem;
+}
