@@ -1,18 +1,22 @@
 import React from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {getMuiTheme, MuiThemeProvider} from 'material-ui/styles';
 
 import Header from './Header';
-import SearchForm from './SearchForm';
-import ToolUsageSection from './ToolUsageSection';
+import ToolUsageSearch from './ToolUsageSearch';
+
+const muiTheme = getMuiTheme({
+    appBar: {
+        background: '#123456',
+    },
+});
 
 const App = () => {
     return (
-        <MuiThemeProvider>
+        <MuiThemeProvider muiTheme={muiTheme}>
             <Header/>
 
             <div id="contents">
-                <SearchForm/>
-                <ToolUsageSection/>
+                <ToolUsageSearch/>
             </div>
         </MuiThemeProvider>
     )

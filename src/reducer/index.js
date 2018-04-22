@@ -1,15 +1,10 @@
 import {combineReducers} from 'redux'
 
-import {fetchToolNamesError, fetchToolNamesSuccess, loadToolNames} from './tool-name'
-import {fetchToolUsagesError, fetchToolUsagesSuccess, loadToolUsages} from './tool-usage'
-import {clickSearch} from './serch-button'
+import {searchToolUsages} from './tool-usage-reducer'
+import {changeEndDate, changeStartDate} from './search-range-date-reducer'
 
 export default combineReducers({
-    loadToolNames,
-    fetchToolNamesError,
-    fetchToolNamesSuccess,
-    fetchToolUsagesError,
-    fetchToolUsagesSuccess,
-    loadToolUsages,
-    clickSearch,
+    searchToolUsages,
+    changeStartDate,
+    changeEndDate,
 })

@@ -6,7 +6,8 @@ class Header extends React.Component {
     render() {
         return (
             <header>
-                <AppBar title="Interface"/>
+                <AppBar title="Interface"
+                        showMenuIconButton={false}/>
             </header>
         )
     }
