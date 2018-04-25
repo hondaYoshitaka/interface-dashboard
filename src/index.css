@@ -7,19 +7,15 @@ header {
     margin-bottom: 1.5rem;
 }
 
-input[type="text"] {
-    display: block;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    color: #495057;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-}
-
-input::placeholder {
-    color: lightgray;
-}
+/*input[type="text"] {*/
+/*display: block;*/
+/*padding: .375rem .75rem;*/
+/*font-size: 1rem;*/
+/*color: #495057;*/
+/*background-color: #fff;*/
+/*border: 1px solid #ced4da;*/
+/*border-radius: .25rem;*/
+/*}*/
 
 #contents {
     padding: 0 1rem;
@@ -38,17 +34,4 @@ input::placeholder {
     border-left: 5px solid rgb(0, 188, 212);
     padding-left: 1rem;
     font-size: 1.2rem;
-}
-
-.range-date-picker {
-    margin-bottom: .7rem;
-}
-
-.range-date-picker > div {
-    display: inline;
-}
-
-.range-date-picker > div:nth-child(1)::after {
-    content: '〜';
-    margin: 0 .5rem;
 }

@@ -1,26 +1,16 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {RaisedButton} from 'material-ui'
-import DatePicker from 'react-datepicker'
-import moment from 'moment'
 
+import 'react-dates/initialize';
+import DateRangePickerWrapper from './DateRangePickerWrapper'
 import {fetchToolUsages} from '../action/fetch-tool-usage'
 import {setEndDate, setStartDate} from '../action/set-search-date'
-
-import 'react-datepicker/dist/react-datepicker.css'
 
 
 const DATE_FORMAT = 'YYYY-MM-DD';
 
 class ToolUsageSection extends React.Component {
-
-    convertDateToMoment(date) {
-        if (!date) {
-            return null;
-        }
-        return moment(date);
-    }
-
     render() {
         if (this.props.hasError) {
             return <p> error </p>;
@@ -34,30 +24,9 @@ class ToolUsageSection extends React.Component {
         return ([
             <section id="section-search-tool-usages">
                 <h2 className="subtitle-search">ツール使用状況の検索</h2>
-                <div className="range-date-picker">
-                    <DatePicker
-                        name="startDate"
-                        selectsStart
-                        selected={this.convertDateToMoment(this.props.startDate)}
-                        startDate={this.convertDateToMoment(this.props.startDate)}
-                        endDate={this.convertDateToMoment(this.props.endDate)}
-                        onChange={this.props.handleOnChangeStart}
-                        placeholderText="2000-01-01"
-                        dateFormat={DATE_FORMAT}
-                        maxDate={moment()}
-                    />
-                    <DatePicker
-                        name="endDate"
-                        selectsEnd
-                        selected={this.convertDateToMoment(this.props.endDate)}
-                        startDate={this.convertDateToMoment(this.props.startDate)}
-                        endDate={this.convertDateToMoment(this.props.endDate)}
-                        onChange={this.handleOnChangeEnd}
-                        placeholderText="2000-01-31"
-                        dateFormat={DATE_FORMAT}
-                        maxDate={moment()}
-                    />
-                </div>
+
+                <DateRangePickerWrapper displayFormat={DATE_FORMAT}/>
+
                 <RaisedButton label="検索する"
                               disabled={this.props.isLoading}
                               onClick={() => {
